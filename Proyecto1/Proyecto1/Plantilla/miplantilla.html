@@ -1,0 +1,31 @@
+<html>
+    <body>
+
+        {% include 'superior/barra.html' %}   
+    <h2 style="color: blue;">
+    Estamos viendo una nueva plantilla
+    </h2>
+    {% if nombre_persona == 'Juan' %}
+    <p>El curso lo imparte el profesor titular</p>
+    {% else %}   
+    <p>El curso lo imparte el profesor suplente</p>
+    {% endif %}
+
+    <p> El nombre del profesor es: {{nombre_persona}} {{apellido_persona}}</p>
+    <p> Eatamos viendo el tema de las plantillas a d&iacute;a {{momento_actual.day}}</p>
+    <p><strong>Temas del curso</strong> </p>
+    <p> 
+        <ul>
+        {% if temas %}
+            {% for eltema in temas %}
+                <li> {{eltema}}</li>
+            {% endfor %}
+        {% else %}   
+            <p>No hay temas que mostrar</p>
+
+        {% endif %}
+
+        </ul>
+    </p>
+</body>
+    </html>
